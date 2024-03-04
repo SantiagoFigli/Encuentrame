@@ -42,6 +42,4 @@ public class MyUser {
     private LocalDate birthdate;
     @Enumerated(EnumType.STRING)
     private UserRole role;
-
-
 }

@@ -31,6 +31,13 @@ public class HomeController {
         return "index";
     }
 
+
+    @GetMapping("/mascotas")
+    public String getMascotas() {
+        return "adopciones";
+    }
+
+
     @GetMapping("/registrar")
     public String registrar() {
         return "registrarse.html";
@@ -70,7 +77,7 @@ public class HomeController {
 
     @GetMapping("/login")
     public String login(@RequestParam(required = false) String error, ModelMap model ) {
-
+        System.out.println("AAAAAA");
 
 
         if (error != null) {
@@ -81,7 +88,7 @@ public class HomeController {
     }
 
     @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
-    @GetMapping("/inicio")
+    @GetMapping("/iniciologged")
     public String initSession(HttpSession session) {
 
         MyUser logued = (MyUser) session.getAttribute("usuariosession");

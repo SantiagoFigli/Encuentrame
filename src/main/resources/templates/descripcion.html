@@ -40,7 +40,6 @@
         
             <!-- La barra de navegación, con el logo, adopciones,refugios,etc -->
             <nav class="header" >
-                
                 <div class="logo-container">
                     <a href="/">
                         <img src="imagenes/logo1.png" alt="Logo Encuentrame">
@@ -49,19 +48,17 @@
                 
                 <ul class="nav-list">
 
-                    <li><a href="adopciones.html">Adopciones</a></li>
-                    <li><a href="eventos.html">Eventos</a></li>
-                    <li><a href="refugios.html">Refugios</a></li>
-                    <li><a href="adopcionespeciales.html">Adopción Especial</a></li>
-                    <li><a href="sobrenosotros.html">Sobre Nosotros</a></li>
-                    
+                    <li><a href="/creation">Adopciones</a></li>
+                    <li><a href="/mascotas">Mascotas</a></li>
+                    <li><a href="refugios">Refugios</a></li>
+                    <li><a href="adopcionespeciales">Adopción Especial</a></li>
+                    <li><a href="sobrenosotros">Sobre Nosotros</a></li>
                     <div class="botones-container">
-                        <a class="ingresarheader" href="ingresar.html" >Ingresar</a>
-                        <a class="registrarseheader" href="/registrarse" >Registrarse</a>
+                        <a class="ingresarheader" th:href="@{/login}" >Ingresar</a>
+                        <a class="registrarseheader" th:href="@{/registrar}" >Registrarse</a>
                     </div>
-
                 </ul>
-                
+>>>>>>> d12154b19247cbae6495b7d6a7e508f4829a5d1b
             </nav>
 
         <section>    
@@ -76,15 +73,15 @@
                             </div>
                         </div>
                     </div>
-<!--                    <div class="carousel-item">-->
-<!--                        <div class="d-flex justify-content-center align-items-center">-->
-<!--                            <div class="col-md-6">-->
-<!--                                <a href="#">-->
-<!--                                    <img th:src="@{image_url}" class="img-fluid" alt="imagen 2">-->
-<!--                                </a> -->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="col-md-6">
+                                <a href="#">
+                                    <img th:src="@{image_url}" class="img-fluid" alt="imagen 2">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="carousel-item">
                         <div class="d-flex justify-content-center align-items-center">
                             <div class="col-md-6">

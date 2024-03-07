@@ -1,0 +1,48 @@
+package com.encuentrame.project.encuentrame.entities;
+
+import com.encuentrame.project.encuentrame.enumerations.UserRole;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import lombok.*;
+import jakarta.validation.constraints.NotBlank;
+import org.hibernate.annotations.UuidGenerator;
+
+import java.time.LocalDate;
+import java.util.Set;
+import java.util.UUID;
+
+@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+
+public class MyUser {
+    @Id
+    @UuidGenerator
+    @Column(name = "user_id")
+    private UUID user_id;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "myUser")
+    private Set<RequestAdoption> requestAdoptions;
+
+    @OneToMany(mappedBy = "myUser", fetch = FetchType.EAGER)
+    private Set<Article> articles;
+
+    @NotBlank(message = "The name cannot be blank.")
+    private String name;
+    @NotBlank(message = "The surname cannot be blank.")
+    private String surname;
+    @NotBlank(message = "The email cannot be blank.")
+    private String email;
+    @NotBlank(message = "The password cannot be blank.")
+    private String password;
+    @NotNull(message = "The birthdate cannot be blank.")
+    private LocalDate birthdate;
+    @Enumerated(EnumType.STRING)
+    private UserRole role;
+}

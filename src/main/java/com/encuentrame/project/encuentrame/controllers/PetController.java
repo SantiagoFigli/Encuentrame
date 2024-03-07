@@ -8,7 +8,10 @@ import com.encuentrame.project.encuentrame.services.StorageService;
 import jakarta.validation.Valid;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -103,8 +106,7 @@ public class PetController {
         List<Pet> pets = petService.getAllPets();
         //Se debe anclar para ser enviado a la interfaz del usuario
         model.addAttribute("Mascotas", pets);
-//        return "descripcion.html"; //Pendiente de crear Thymeleaf
-        return "adopciones.html";
+        return "adopciones.html"; //Pendiente de crear Thymeleaf
     }
     @GetMapping("/descripcionmascotas")
     public String displayDescription (ModelMap model){
@@ -144,6 +146,19 @@ public class PetController {
         return null; // Pendiente Thymeleaf
     }
 
+    @RestController
+    @Transactional(readOnly = true)
+public class PetApiController{
+    @GetMapping("/api/pets")
+    public ResponseEntity<List<Pet>> getAllPets() {
+        List<Pet> pets = petRepository.findAll();
+        if (!pets.isEmpty()) {
+            return new ResponseEntity<>(pets, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+}
 
 
 }

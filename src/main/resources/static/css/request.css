@@ -2,18 +2,27 @@ body{
     background-color: #5d3891;
     overflow-x: hidden;
 }
-
-section {
+.formulario {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     padding-top: 150px;
+
 }
+
+.media {
+    width: 480px;
+    height: 480px;
+    background: #FF731D;
+    padding: 40px 20px;
+    border-radius: 15px;
+    position: relative;}
 
 form {
     width: 480px;
-    height: 550px;
+    height: 480px;
     background: #FF731D;
     padding: 40px 20px;
     border-radius: 15px;
@@ -33,22 +42,6 @@ form button {
     margin-top: auto;
     transition: background-color 0.3s ease-in-out;
 }
-
-.form-control{
-    display: flex;
-    flex-direction: row;
-    width: 97%;
-    height: 20px;
-    border: 2px;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 16px;
-    color: #FF731D;
-    background: #5d3891;
-    margin-top: auto;
-    box-sizing: border-box;
-    transition: background-color 0.3s ease-in-out;
-}**
 
 form button:hover {
     background-color: #E8E2E2;
@@ -131,6 +124,18 @@ form .registrarse{
     align-items: center;
     flex-wrap: nowrap;
     gap: 10px;*/
-    
-    
+
+
+}
+.btn.btn-primary.send{
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.ml-3 {
+    width: 64px; /* Ancho de la imagen */
+    height: 64px; /* Altura de la imagen */
 }

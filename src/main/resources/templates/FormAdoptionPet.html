@@ -45,35 +45,45 @@
     </h2>
 
 
-    <form th:object="${pet}" th:action="@{/createAnimal}" method="post">
+    <form th:object="${pet}" th:action="@{/mascotas/createAnimal}" method="post">
         <h1>¡REGISTRA UNA NUEVA MASCOTA!</h1>
         <!--<label for="pet_name">Nombre:</label>
         <input type="text" id="pet_name" name="pet_name" th:field="*{pet_name}" required/>-->
 
         <div class="inputLogin">
-            <input  type="text"  name="name" id="pet_name" class="inputLogin" placeholder="Nombre" autocomplete="off">
+            <input  type="text"  name="pet_name" th:value="${pet_name}" id="pet_name" class="inputLogin" placeholder="Nombre" autocomplete="off">
         </div>
 
         <div class="inputLogin">
-            <input  type="text"  name="name" id="breed" class="inputLogin" placeholder="Raza" autocomplete="off">
+            <input  type="text"  name="specie" th:value="${specie}" id="specie" class="inputLogin" placeholder="Especie" autocomplete="off">
         </div>
 
         <div class="inputLogin">
-            <input  type="text"  name="name" id="age_months" class="inputLogin" placeholder="Edad en meses" autocomplete="off">
+            <input  type="text"  name="breed" th:value="${breed}" id="breed" class="inputLogin" placeholder="Raza" autocomplete="off">
         </div>
 
         <div class="inputLogin">
-            <input  type="text"  name="name" id="color" class="inputLogin" placeholder="Color" autocomplete="off">
+            <input  type="text"  name="age_months" th:value="${age_months}" id="age_months" class="inputLogin" placeholder="Edad en meses" autocomplete="off">
         </div>
 
         <div class="inputLogin">
+            <input  type="text"  name="color" th:value="${color}" id="color" class="inputLogin" placeholder="Color" autocomplete="off">
+        </div>
+
+        <div class="inputLogin">
+            <input  type="text"  name="size" th:value="${size}" id="size" class="inputLogin" placeholder="tamaño" autocomplete="off">
+        </div>
+
+<!--         <div class="inputLogin">
             <label for="size">Tamaño:</label>
-            <select id="size" name="Tamaño" class="inputLogin" required>
-                <option value="small">Pequeño</option>
-                <option value="medium">Mediano</option>
-                <option value="large">Grande </option>
+            <select id="size" name="size" class="inputLogin" required  th:field="${size}">
+                <option th:each="sizeOption : ${T(com.encuentrame.project.encuentrame.enumerations.Size).values()}"
+                        th:value="${sizeOption}"
+                        th:text="${sizeOption}">
+                </option>
             </select>
-        </div>
+
+        </div> -->
 
 
         <!--<label for="breed">Raza:</label>

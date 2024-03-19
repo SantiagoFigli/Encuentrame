@@ -4,18 +4,24 @@ import com.encuentrame.project.encuentrame.entities.Pet;
 import com.encuentrame.project.encuentrame.repositories.CareGiverRepository;
 import com.encuentrame.project.encuentrame.repositories.PetRepository;
 import com.encuentrame.project.encuentrame.service.PetService;
+import com.encuentrame.project.encuentrame.services.StorageService;
 import jakarta.validation.Valid;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.Clock;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import org.slf4j.Logger;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 @RequestMapping("/")
@@ -32,29 +38,65 @@ public class PetController {
     @Autowired
     private CareGiverRepository careGiverRepository;
 
+    @Autowired
+    private StorageService storageService;
+
     //Formulario de creación de animal
     /*@GetMapping("/creation")
     public String createPetForm(Model model) {
         model.addAttribute("Pet","Registre una mascota" );
-        return ("FormAdoptionPet.html");
+        return ("FormCreatePet.html");
     }*/
     @GetMapping("/creation")
     public String createPetForm(Model model) {
         model.addAttribute("pet", new Pet());
-        return "FormAdoptionPet.html";
+        return "FormCreatePet.html";
     }
 
-    @PostMapping("/createAnimal")
-    public String createPet(Model model, @ModelAttribute("pet") Pet pet){
-        logger.debug("The request PET is " + pet);
+
+    @PostMapping("/createAnimalTest")
+    public String createPetTest(@RequestParam("image") MultipartFile file) {
+
+
+
+
+
         try{
-            Pet createdPet = petService.createPet(pet);
-            logger.info("Created pet with ID: " + createdPet.getPet_id());
+            String uploadImagePath = storageService.uploadImageToFileSystem(file);
+
+            logger.info("Saved in: " + uploadImagePath );
+
+
             return ("index.html");
 
         }catch(Exception exception){
             logger.error("Error creating PET: " + exception.getMessage() + " cause: " + exception.getCause());
-            return ("FormAdoptionPet.html");
+            return ("FormCreatePet.html");
+        }
+    }
+
+    @PostMapping("/createAnimal")
+    public String createPet(Model model, @ModelAttribute("pet") Pet pet, @RequestParam("image") MultipartFile file) {
+
+
+
+        logger.debug("The request PET is " + pet);
+
+        try{
+            String uploadImagePath = storageService.uploadImageToFileSystem(file);
+//            pet.setImage_url(uploadImagePath);
+            pet.setImage_name(uploadImagePath);
+            System.out.println(pet.getImage_url());
+            Pet createdPet = petService.createPet(pet);
+            logger.info("Created pet with ID: " + createdPet.getPet_id());
+
+            model.addAttribute("imagepath",uploadImagePath);
+
+            return ("index.html");
+
+        }catch(Exception exception){
+            logger.error("Error creating PET: " + exception.getMessage() + " cause: " + exception.getCause());
+            return ("FormCreatePet.html");
         }
     }
 
@@ -65,7 +107,13 @@ public class PetController {
         List<Pet> pets = petService.getAllPets();
         //Se debe anclar para ser enviado a la interfaz del usuario
         model.addAttribute("Mascotas", pets);
-        return "descripcion.html"; //Pendiente de crear Thymeleaf
+        return "adopciones_listar.html"; //Pendiente de crear Thymeleaf
+    }
+
+    @GetMapping("/opcionesListar")
+    public String displayOptions (ModelMap model){
+
+        return "adopciones.html"; //Pendiente de crear Thymeleaf
     }
 
     @GetMapping("/descripcionmascotas")
@@ -105,6 +153,19 @@ public class PetController {
         return null; // Pendiente Thymeleaf
     }
 
+    @RestController
+    @Transactional(readOnly = true)
+public class PetApiController{
+    @GetMapping("/api/pets")
+    public ResponseEntity<List<Pet>> getAllPets() {
+        List<Pet> pets = petRepository.findAll();
+        if (!pets.isEmpty()) {
+            return new ResponseEntity<>(pets, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+}
 
 
 }

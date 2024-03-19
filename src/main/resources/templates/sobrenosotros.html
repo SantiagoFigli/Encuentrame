@@ -1,5 +1,5 @@
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head>
         
         
@@ -27,25 +27,24 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
-        <nav class="header">
+        <nav class="header" >
             <div class="logo-container">
-                <a href="index.html">
+                <a href="/">
                     <img src="imagenes/logo1.png" alt="Logo Encuentrame">
                 </a>    
-            </div>   
+            </div>
             
             <ul class="nav-list">
-                <li><a href="adopciones.html">Adopciones</a></li>
-                <li><a href="eventos.html">Eventos</a></li>
-                <li><a href="refugios.html">Refugios</a></li>
-                <li><a href="adopcionespeciales.html">Adopción Especial</a></li>
-                <li><a href="sobrenosotros.html">Sobre Nosotros</a></li>
-                
+
+                <li><a href="/creation">Adopciones</a></li>
+                <li><a href="/mascotas">Mascotas</a></li>
+                <li><a href="refugios">Refugios</a></li>
+                <li><a href="adopcionespeciales">Adopción Especial</a></li>
+                <li><a href="sobrenosotros">Sobre Nosotros</a></li>
                 <div class="botones-container">
-                    <a class="ingresarheader" href="ingresar.html" >Ingresar</a>
-                    <a class="registrarseheader" href="registrarse.html" >Registrarse</a> 
+                    <a class="ingresarheader" th:href="@{/login}" >Ingresar</a>
+                    <a class="registrarseheader" th:href="@{/registrar}" >Registrarse</a>
                 </div>
-                
             </ul>
         </nav>
 
@@ -53,8 +52,9 @@
         <section class="about-us">
             <div class="about-content">
                 <h2>¿Quienes Somos?</h2>
-                <p>Quisque porttitor magna eu neque gravida dapibus nec et mi. Aliquam ex arcu, pretium nec nulla aliquet, aliquet sodales mi. Nam lacinia est vel magna rhoncus ultricies. Pellentesque vehicula iaculis mi at auctor. In eu lorem vel mauris tincidunt lobortis eget sit amet lectus. Nam porttitor interdum nunc, sed rhoncus ligula ultrices vitae. Maecenas rhoncus ipsum lacus, sed egestas ex lacinia ut. Ut ornare tellus eu aliquet maximus. Sed vel erat feugiat, pellentesque nibh ac, pharetra tortor. Vestibulum malesuada vitae ipsum ut egestas.</p>
-            </div>
+                <p>“En Encuentrame, estamos comprometidos con la creación de conexiones significativas entre humanos y
+                    nuestros adorables amigos de cuatro patas. Nuestra misión es simple pero poderosa: facilitar la adopción de perritos y gatitos, fomentar el amor y el compromiso con los animales,
+                    y construir un mundo donde cada mascota tenga un hogar amoroso.”</p>
         </section>
 
         <h3>HAZNOS<br> UNA<br> PREGUNTA</h3>

@@ -26,14 +26,23 @@ h1{
 
 
  .filter-button {
-    position: fixed;
+    /* position: fixed;
     right: 20px;
     bottom: 20px;
     background-color: #012f6f;
     color: #ffffff;
     border-radius: 5px;
     padding: 10px 20px;
-    text-decoration: none;
+    text-decoration: none; */
+
+    position: fixed;
+    margin-left: auto;
+    background-color: rgb(1, 47, 111);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none; 
+    line-height: 50px;
+    display: flex; 
 }
 
  .filter-button i {
@@ -47,9 +56,9 @@ h1{
     margin: 0 auto;
 }
 .carousel-item img{
-    max-height: 470px;
+     max-height: 450px;
     object-fit: cover;
-    border-radius: 300px;
+   border-radius: 300px; 
 }
 
 .carousel-control-prev{

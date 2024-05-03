@@ -1,0 +1,113 @@
+[33m3b5d3fc[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge pull request #20 from No-Country/dev
+[33m1c4b343[m[33m ([m[1;31morigin/dev[m[33m, [m[1;32mdev[m[33m)[m some general adjustments
+[33md12154b[m Guardado de imagenes funcional
+[33m2c09ab4[m selected changes in Storage Service
+[33m4349a35[m fixed pet image uploading
+[33m8fef9d1[m Se pueden subir imagenes
+[33ma413e05[m Preparo lo mio para pushear a dev
+[33m5a132e4[m Merge branch 'dev' of https://github.com/No-Country/c16-53-t-java into matias-local
+[33maf7af37[m Funciona el CreateRequestAdoption
+[33m61af59d[m advances in image file handling
+[33m6ccc672[m cree metodo createAdoption funcional y metodos para listar usuarios y pets
+[33ma56f301[m empezando el request, muy crudo aun
+[33mf130319[m merge
+[33md3a52ad[m Vuelvo antes de pullEar  lo de lina
+[33m1b7378d[m Cambios locales
+[33mf495216[m prepull
+[33m22a5bab[m Uploading some mods: Pet Controller, Pet and createPet's Thymeleaf
+[33m2482310[m Merge pull request #19 from No-Country/devjp
+[33m6036e3f[m Advances in pet listing and description, first steps with the integration of thymeleaf
+[33m3fced4f[m merged conflicting branch
+[33m6768e3a[m Up changes Login
+[33m9f6c6e2[m Adding CSS modifications to the Header, Footer and PetController, as well as adding a new HTML view to create a pet.
+[33m16cb45d[m Controllers and entities update
+[33m337e88a[m Merge pull request #17 from No-Country/dev
+[33mcbcf47f[m Now we can save users in the database from the form.
+[33m142777d[m Merge pull request #16 from No-Country/dev
+[33m97aeda6[m progreso formulario de registro, pruebas exitosas con la creacion y persistencia de usuario
+[33ma6a5c6c[m Deleting some unnecessary files and adding the pet controller
+[33mf32ee86[m Delete unnecessary file
+[33m4b2c760[m Merge branch 'dev' into devlm
+[33m5a91467[m Merge branch 'dev' into devlm
+[33m8bb81e0[m Merge pull request #15 from No-Country/dev
+[33m0167b17[m Merge pull request #14 from No-Country/devjp
+[33m858f13a[m Merge branch 'dev' of https://github.com/No-Country/c16-53-t-java into dev
+[33m2f03828[m Updated MyUserServiceImpl CreateUser Method, added HomeController, first steps with Thymleaf integration
+[33m622c1c9[m Merge remote-tracking branch 'RepoNoCountry/dev' into matias-dev
+[33m75652cb[m Resolución de conflictos después de merge
+[33mfd54efd[m Merge pull request #13 from No-Country/devjp
+[33mb8b2f35[m[33m ([m[1;31morigin/dev-lau[m[33m)[m Merge pull request #12 from No-Country/devjp
+[33maf6c924[m FrontEnd integration inside project, HomeController created
+[33m9e81110[m Merge remote-tracking branch 'RepoNoCountry/dev' into matias-dev
+[33m4e5ac90[m Adding Request Adoption and CareGiver services and implementation
+[33m09788bb[m Creating services and controllers of Article & Event
+[33m48d6c58[m Services and Repository
+[33mfc5ff23[m Merge pull request #11 from No-Country/devjp
+[33mac3c4cd[m Merge pull request #10 from No-Country/devjp
+[33m63c0fff[m fixed CareGiver Controller refactoring, replacing careGiverRepository to careGiverService, finished User and Pet Services, tested out
+[33m42be751[m Adding services
+[33m61468ad[m Merge remote-tracking branch 'origin/dev-mc' into devjp
+[33m9d385d9[m Empiezo servicio y controlador de Article, falta Event y hacerlo funcionar
+[33m2554d62[m minimos arreglos en las entidades, caregivers service y controller de prueba
+[33m739bea0[m entidades
+[33m9f0c71f[m Resolucion de conflictos
+[33m51edfbd[m merge incorporando seguridad
+[33mf446379[m Merge pull request #9 from No-Country/devjp
+[33mfdab9c5[m Merge pull request #8 from No-Country/devjp
+[33m25c10de[m Added Spring Security configuration implementation. Refactored User Entity to MyUser to avoid conflicts with Spring Security User reserved word. Implemented MyUserService.
+[33m10ae0e6[m Merge pull request #7 from No-Country/devjp
+[33me5b2e5f[m Merge pull request #6 from No-Country/devjp
+[33m1d4c776[m Added some repository classes, CareGiver controller, fixed inconsistencies and naming conventions for the class RequestEvent and Event, deleted redundant Care_giver_Id inside the Pet class, created the Spring Security layer in order to start configuring it.
+[33med06206[m Added some repository classes, CareGiver controller, fixed inconsistencies and naming conventions for the class RequestEvent and Event, deleted redundant Care_giver_Id inside the Pet class, created the Spring Security layer in order to start configuring it.
+[33m9ef2412[m upload entities
+[33m2508ea7[m Up bdd
+[33mdd98065[m cambios confirmados
+[33m665fef1[m merge con rama dev
+[33mc3ddd23[m commit anterior al pull
+[33m153d658[m Merge branch 'dev' into devlm
+[33m46f6342[m Refactorizando
+[33md2bf394[m Refactoring
+[33me3bd7c0[m Merge pull request #3 from No-Country/devjp
+[33m15ac7ce[m updated from Lina's branch
+[33m28b2fbb[m recupero entidades CareGiver y RequestAdoption como estaban en el commit anterior
+[33mb69640d[m Up
+[33m8bac081[m Squashed commit of the following:
+[33mb84c192[m Up
+[33m1f09aa6[m Up
+[33m7c2b649[m Merge pull request #2 from No-Country/devjp
+[33m8e5c80f[m update own repo
+[33mcfea358[m Merge branch 'dev' of https://github.com/No-Country/c16-53-t-java into matias-dev
+[33m2d29f45[m User y Event
+[33mb570638[m Event & User ready
+[33mfb27a64[m entities user & envent lists
+[33m35b21b9[m entidades funcionando, pequeño refactoreo
+[33mc039a1d[m Refactoring
+[33me071114[m Merge remote-tracking branch 'origin/dev' into devjp
+[33mcfe498b[m solving merging issues
+[33mf68f917[m Merge remote-tracking branch 'origin/dev-mc' into devjp merge with current changes
+[33m6e7e78d[m modificacion de app properties local
+[33m5cfabff[m advance on entities
+[33m951f394[m Merge pull request #1 from No-Country/devjp
+[33m106c058[m Merge branch 'main' into devjp
+[33m82797f8[m Added enum classes, updated naming convention and added several annotations.
+[33mdd33dc2[m Merge branch 'main' of https://github.com/No-Country/c16-53-t-java
+[33m69152ce[m adding entities Event & User
+[33m7458850[m Merge branch 'devlm'
+[33m4fd88db[m Adding entity Request Adoption
+[33m7e45992[m Updating readme
+[33m69489fb[m refactoring packages names and defining env variables for database credentials
+[33mc39552c[m Merge branch 'main' into devlm
+[33m783ede1[m paquetes con entidades vacias para ser almacenados
+[33m67ac494[m principales paquetes
+[33mb14b75f[m Merge branch 'main' of https://github.com/No-Country/c16-53-t-java
+[33meb4ddc5[m principales paquetes
+[33m2594764[m Entidades empezando
+[33md2bbd1e[m Agregado el atributo booleano adoptado
+[33m6980010[m creacion de entidad pet y article.
+[33m95cc5a8[m Adding careGiver entity and downgrading to Java 17
+[33mdcf3fd5[m Creo entidades vacias, java17
+[33mf19a765[m Arreglado el POM
+[33m2c4c24e[m Agregado la dependencia de JPA
+[33m2bfe47f[m Primer commit
+[33mb60973e[m Juan Pablo first commit.
+[33mcd8ab3d[m[33m ([m[1;31morigin/Dev-Nacho[m[33m)[m Initial commit
